@@ -1,0 +1,30 @@
+.login-box {
+    grid-area: header;
+    z-index: 10;
+    width: 10%;
+    justify-self: end;
+    align-self: center;
+    /* background-color: rgba(0, 0, 128, 0); */
+
+}
+
+.login-form {
+    display: inline-block;
+    z-index: 999;
+}
+
+.username {
+    float: right;
+}
+
+.password {
+    float: right;
+}
+
+.login-btn {
+    float: right;
+}
+
+.cancel-btn {
+    float: right;
+}

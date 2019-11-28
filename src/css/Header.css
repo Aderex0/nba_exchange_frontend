@@ -1,0 +1,38 @@
+.header-box {
+    grid-area: header;
+    background-color: rgb(23, 64, 139);
+    display: grid;
+    grid-template-areas:
+        'logo home portfolio signup login';
+    width: 100%;
+    justify-content: end;
+    max-height: 60px;
+}
+
+.quick-account-info {
+    grid-area: login;
+    height: 60px;
+    width: 140px;
+    color: white;
+    background-color: rgb(23, 64, 139);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.quick-account-info p {
+    margin-left: 5%;
+    margin-top: 15%;
+    line-height: 0.1rem;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .header-box {
+        justify-content: stretch;
+        grid-template-areas: 
+        'logo   logo'
+        'signup login'
+        'home   portfolio';
+    }
+  }

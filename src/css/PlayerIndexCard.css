@@ -1,0 +1,70 @@
+.live-table td {
+    font-family: Helvetica, sans-serif;
+    background-color: rgba(23, 64, 139, 0.1);
+}
+
+.live-table tr:hover {
+    transition: 0.5s;
+    background-color: rgba(23, 64, 139, 0.11)
+}
+
+.live-table tr:nth-child(1):hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.live-table td:nth-child(2) {
+    width: 10%;
+    padding: 0;
+}
+
+.live-table td:nth-child(3) {
+    width: 8%;
+    padding: 0;
+}
+
+.live-table td:nth-child(4) p {
+    background-color: rgba(23, 64, 139, 0.4);
+    width: 85%;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    border-radius: 5%;
+    text-align: center;
+}
+.live-table td:nth-child(4) {
+    width: 11%;
+}
+
+
+.live-table .buy-btn {
+    width: 85%;
+    height: 45px;
+    padding: 0;
+    border: none;
+    background-color: rgba(23, 64, 139);
+    font-weight: 700;
+    border-radius: 5%;
+    color: white;
+}
+
+.live-table .buy-btn:hover {
+    border: none;
+    background-color: rgba(201, 8, 42, 0.9);
+}
+
+.live-table .buy-btn:active {
+    background-color: rgba(201, 8, 42, 0.3);
+}
+
+.live-table .buy-input {
+    width: 95%;
+    height: 41px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    border-radius: 5%;
+    border: 1px solid rgb(23, 64, 139);
+}
+
+.live-table td:nth-child(1) {
+    border-left: 8px rgba(23, 64, 139, 1) solid;
+}

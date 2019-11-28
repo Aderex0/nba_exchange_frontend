@@ -1,0 +1,19 @@
+.portfolio-container {
+    margin-left: 5%;
+    grid-area: standings;
+    height: 90vh;
+}
+
+.portfolio-table {
+    background-color: white;
+    border-spacing: 0 5px;
+    border-collapse: separate;
+    width: 100%;
+}
+
+.portfolio-table th {
+    font-family: Helvetica, sans-serif;
+    border-bottom: 1px solid rgba(23, 64, 139, 0.4);
+    font-weight: 500;
+    padding: 0.5% 0%;
+}

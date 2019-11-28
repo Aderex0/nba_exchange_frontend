@@ -1,0 +1,58 @@
+.portfolio-table td {
+    font-family: Helvetica, sans-serif;
+    background-color: rgba(23, 64, 139, 0.1);
+}
+
+.portfolio-table tr:hover {
+    transition: 0.5s;
+    background-color: rgba(23, 64, 139, 0.11)
+}
+
+.portfolio-table tr:nth-child(1):hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.portfolio-table .sell-btn {
+    width: 90%;
+    height: 45px;
+    padding: 0;
+    border: none;
+    background-color: rgba(201, 8, 42, 0.9);
+    font-weight: 700;
+    border-radius: 5%;
+    color: white;
+}
+
+.portfolio-table .sell-btn:hover {
+    border: none;
+    background-color: rgb(23, 64, 139);
+}
+
+.portfolio-table .sell-btn:active {
+    background-color: rgba(23, 64, 139, 0.3);
+}
+
+input:focus {
+    outline: none;
+}
+
+.portfolio-table .sell-input {
+    width: 30%;
+    height: 40px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    border-radius: 5%;
+    border: 1px solid rgb(23, 64, 139);
+}
+
+.player-name {
+    padding-left: 2%;
+}
+
+.portfolio-table td:nth-child(6) {
+    border: 1px rgba(23, 64, 139, 0.4) solid;
+}
+
+.portfolio-table td:nth-child(1) {
+    border-left: 8px rgba(201, 8, 42, 1) solid;
+}

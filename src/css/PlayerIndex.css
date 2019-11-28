@@ -1,0 +1,20 @@
+.player-index-box {
+    border-top: 2px solid rgb(23, 64, 139);
+    border-bottom: 2px solid rgb(23, 64, 139);
+    height: 90vh;
+    overflow: scroll;
+}
+
+.live-table {
+    background-color: white;
+    border-spacing: 0 5px;
+    border-collapse: separate;
+    width: 100%;
+}
+
+.live-table th {
+    font-family: Helvetica, sans-serif;
+    border-bottom: 1px solid rgba(23, 64, 139, 0.4);
+    font-weight: 500;
+    padding: 0.5% 0%;
+}

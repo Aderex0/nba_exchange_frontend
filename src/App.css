@@ -1,0 +1,27 @@
+.grid-box {
+  display: grid;
+  width: 100%;
+  grid-row-gap: 30px;
+  grid-template-areas: 
+    'header    header   header'
+    'standings livebox  stats';
+}
+
+@media only screen and (max-width: 900px) {
+  .grid-box {
+    grid-template-areas: 
+      'header     header'
+      'standings  livebox'
+      'stats      stats';
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-box {
+    grid-template-areas:
+      'header'
+      'livebox'
+      'stats'
+      'standings';
+    }
+}
