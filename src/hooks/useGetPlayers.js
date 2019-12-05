@@ -8,7 +8,7 @@ const useGetPlayers = () => {
     API.getPlayers().then(setPlayers)
   }, [])
 
-  return { players }
+  return { players, setPlayers }
 }
 
 export default useGetPlayers

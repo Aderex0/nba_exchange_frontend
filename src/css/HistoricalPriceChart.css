@@ -1,0 +1,16 @@
+.historical-chart-box {
+    margin-left: 5px;
+    border: 2px rgb(23, 64, 139) solid;
+    z-index: 999;
+}
+
+.chart-exit {
+    position: absolute;
+    width: 10%;
+    height: 12%;
+    z-index: 999;
+    right: 0;
+    background-color: rgb(23, 64, 139);
+    color: white;
+    border: none;
+}

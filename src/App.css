@@ -1,10 +1,18 @@
+body {
+  background-image: url('https://i.ibb.co/Hr5sCQf/New-Project.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .grid-box {
   display: grid;
   width: 100%;
-  grid-row-gap: 30px;
+  grid-gap: 30px;
   grid-template-areas: 
     'header    header   header'
+    'standings livebox  stats'
     'standings livebox  stats';
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 @media only screen and (max-width: 900px) {

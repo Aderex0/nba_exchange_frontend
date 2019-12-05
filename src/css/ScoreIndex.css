@@ -1,0 +1,178 @@
+.box-score-container {
+    border-bottom: 2px solid rgb(23, 64, 139);
+    height: 90vh;
+    overflow: scroll;
+}
+
+.matchup-card {
+    border: 1px solid rgb(23, 64, 139);
+    background-color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+.matchup-card {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+    height: 30vh;
+}
+
+.vTeam-logo {
+    display: grid;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+}
+
+.vTeam-logo img {
+    width: 60%;
+    justify-self: center;
+    align-self: center;
+}
+
+.vTeam-logo p {
+    text-align: center;
+    line-height: 20px;
+    align-self: center;
+    font-size: 1em;
+}
+
+.vTeam-score {
+    display: grid;
+    align-content: center;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.line-score-container {
+    display: grid;
+    grid-template-areas:
+    'live live live'
+    'v1   Q1   h1'
+    'v2   Q2   h2'
+    'v3   Q3   h3'
+    'v4   Q4   h4';
+    justify-content: center;
+}
+
+.live {
+    grid-area: live;
+    text-align: center;
+}
+
+.live p {
+    margin: 5px;
+    padding: 0;
+    font-weight: 600;
+}
+
+.vQ1 {
+    grid-area: v1;
+    color: rgb(201, 8, 42);
+    text-align: center;
+    border-top: 1px solid rgb(201, 8, 42);
+}
+
+.vQ2 {
+    grid-area: v2;
+    color: rgb(201, 8, 42);
+    text-align: center;
+    border-top: 1px solid rgb(201, 8, 42);
+}
+
+.vQ3 {
+    grid-area: v3;
+    color: rgb(201, 8, 42);
+    text-align: center;
+    border-top: 1px solid rgb(201, 8, 42);
+}
+
+.vQ4 {
+    grid-area: v4;
+    color: rgb(201, 8, 42);
+    text-align: center;
+    border-top: 1px solid rgb(201, 8, 42);
+}
+
+.q1 {
+    grid-area: Q1;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.q2 {
+    grid-area: Q2;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.q3 {
+    grid-area: Q3;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.q4 {
+    grid-area: Q4;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.hQ1 {
+    grid-area: h1;
+    color: rgb(23, 64, 139);
+    text-align: center;
+    border-top: 1px solid rgb(23, 64, 139)
+}
+
+.hQ2 {
+    grid-area: h2;
+    color: rgb(23, 64, 139);
+    text-align: center;
+    border-top: 1px solid rgb(23, 64, 139)
+}
+
+.hQ3 {
+    grid-area: h3;
+    color: rgb(23, 64, 139);
+    text-align: center;
+    border-top: 1px solid rgb(23, 64, 139)
+}
+
+.hQ4 {
+    grid-area: h4;
+    color: rgb(23, 64, 139);
+    text-align: center;
+    border-top: 1px solid rgb(23, 64, 139)
+}
+
+.hTeam-logo {
+    display: grid;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+}
+
+.hTeam-logo img {
+    width: 60%;
+    justify-self: center;
+    align-self: center;
+}
+
+.hTeam-logo p {
+    text-align: center;
+    line-height: 20px;
+    align-self: center;
+    font-size: 1em;
+}
+
+.hTeam-score {
+    display: grid;
+    align-content: center;
+    font-size: 1.4em;
+    text-align: center;
+}
+

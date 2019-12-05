@@ -8,15 +8,10 @@ const useGetPlayers = () => {
   let getUserId = id => setUserId(id)
 
   const updateOwnedPlayersFromAPI = () => {
-    return API.getOwnedPlayers(userId).then(setOwnedPlayers)
+    API.getOwnedPlayers(userId).then(setOwnedPlayers)
   }
 
-  useEffect(
-    () => {
-      updateOwnedPlayersFromAPI()
-    },
-    [userId]
-  )
+  useEffect(updateOwnedPlayersFromAPI, [userId])
 
   return { ownedPlayers, getUserId, updateOwnedPlayersFromAPI }
 }

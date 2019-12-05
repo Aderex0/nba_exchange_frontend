@@ -7,9 +7,11 @@ import HeaderButton from '../components/HeaderButton'
 const Header = ({ logInToggle, userId, username, accountBalance, logout }) => {
   return (
     <div className='header-box'>
+      <div className='logo-container'>
+        <div className='logo' />
+      </div>
       {userId ? (
         <>
-          <div className='logo' />
           <Link to='/'>
             <HeaderButton area='home' border>
               Home
@@ -20,7 +22,7 @@ const Header = ({ logInToggle, userId, username, accountBalance, logout }) => {
               Portfolio
             </HeaderButton>
           </Link>
-          <HeaderButton onClick={logout} area='signup' border>
+          <HeaderButton area='signup' onClick={logout} border>
             Log Out
           </HeaderButton>
           <div className='quick-account-info'>

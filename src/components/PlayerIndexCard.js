@@ -9,19 +9,37 @@ const PlayerIndexCard = props => {
 
   const handlePurchase = e => {
     e.preventDefault()
-    const purchaseDetails = {
-      user_id: props.userId,
-      playerId: playerId,
-      price: buy,
-      qty: qty
+
+    if (props.userId) {
+      if (qty > 0) {
+        const purchaseDetails = {
+          user_id: props.userId,
+          playerId: playerId,
+          price: buy,
+          qty: qty
+        }
+        API.buyPlayer(purchaseDetails).then(playerData => {
+          props.setAccountBalance(playerData.account_balance)
+          alert(
+            `You have bought ${playerData.qtyOwned} x ${playerData.firstName} ${
+              playerData.lastName
+            } for £ ${playerData.qtyOwned * playerData.boughtPrice}`
+          )
+          props.updateOwnedPlayers()
+        })
+      }
     }
-    API.buyPlayer(purchaseDetails)
   }
 
   return (
     <tbody>
-      <tr>
-        <td className='player-name'>
+      <tr className='live-tr'>
+        <td
+          onClick={() => {
+            props.setPlayerId(playerId)
+          }}
+          className='player-name'
+        >
           {firstName} {lastName}
         </td>
         <td align='center'>
@@ -42,13 +60,19 @@ const PlayerIndexCard = props => {
             name='buying'
             value={qty}
             className='buy-input'
+            min='1'
+            max='100'
           />
         </td>
         <td align='center'>
-          <p>{buy}</p>
+          <div>
+            <p>{buy}</p>
+          </div>
         </td>
         <td align='center'>
-          <p>{sell}</p>
+          <div>
+            <p>{sell}</p>
+          </div>
         </td>
       </tr>
     </tbody>

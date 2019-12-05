@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/LogIn.css'
 import API from '../adapters/API'
+import { withRouter } from 'react-router-dom'
 
 import useLogIn from '../hooks/useLogIn'
 
@@ -9,22 +10,31 @@ const LogIn = ({
   getUserId,
   logInToggle,
   setUsername,
-  setBalance
+  setBalance,
+  history
 }) => {
   const { username, password, trackUsername, trackPassword } = useLogIn()
 
-  const handleLogIn = (loginDetails, event) => {
-    event.preventDefault()
+  const handleLogIn = e => {
+    e.preventDefault()
+    const loginDetails = {
+      username: username.toLowerCase(),
+      password: password
+    }
+
     API.loginUser(loginDetails).then(userData => {
       if (userData.error) throw Error(userData.error)
 
       login(userData)
+      history.push('/')
     })
   }
 
   const login = userData => {
     setUserId(userData.id)
-    setUsername(userData.username)
+    setUsername(
+      userData.username.charAt(0).toUpperCase() + userData.username.slice(1)
+    )
     setBalance(userData.account_balance)
     getUserId(userData.id)
     logInToggle(false)
@@ -34,10 +44,7 @@ const LogIn = ({
 
   return (
     <div className='login-box'>
-      <form
-        className='login-form'
-        onSubmit={event => handleLogIn({ username, password }, event)}
-      >
+      <form className='login-form' onSubmit={e => handleLogIn(e)}>
         <input
           onChange={e => trackUsername(e.target.value)}
           className='username'
@@ -53,10 +60,12 @@ const LogIn = ({
           value={password}
         />
         <input className='login-btn' type='submit' value='Log In' />
-        <button className='cancel-btn'>Cancel</button>
+        <button onClick={logInToggle} className='cancel-btn'>
+          Cancel
+        </button>
       </form>
     </div>
   )
 }
 
-export default LogIn
+export default withRouter(LogIn)

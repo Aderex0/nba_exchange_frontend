@@ -1,14 +1,18 @@
-.live-table td {
+.live-table tr {
     font-family: Helvetica, sans-serif;
     background-color: rgba(23, 64, 139, 0.1);
 }
 
-.live-table tr:hover {
+.live-table tbody:hover {
     transition: 0.5s;
-    background-color: rgba(23, 64, 139, 0.11)
+    background-color: rgba(23, 64, 139, 0.12)
 }
 
-.live-table tr:nth-child(1):hover {
+.live-table th {
+    background-color: white;
+}
+
+.live-table tbody:nth-child(1):hover {
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -22,23 +26,52 @@
     padding: 0;
 }
 
-.live-table td:nth-child(4) p {
-    background-color: rgba(23, 64, 139, 0.4);
-    width: 85%;
-    height: 45px;
-    padding: 0;
-    margin: 0;
-    border-radius: 5%;
-    text-align: center;
-}
 .live-table td:nth-child(4) {
     width: 11%;
 }
 
+.live-table td:nth-child(4) p {
+    padding: 0;
+    margin: 0;
+    align-self: center;
+}
+
+.live-table td:nth-child(4) div {
+    background-color: rgba(23, 64, 139, 0.4);
+    width: 85%;
+    height: 8vh;
+    padding: 0;
+    margin: 0;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.live-table td:nth-child(5) {
+    width: 11%;
+}
+
+.live-table td:nth-child(5) p {
+    padding: 0;
+    margin: 0;
+    align-self: center;
+}
+
+.live-table td:nth-child(5) div {
+    background-color: rgba(201, 8, 42, 0.4);
+    width: 85%;
+    height: 8vh;
+    padding: 0;
+    margin: 0;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+}
 
 .live-table .buy-btn {
     width: 85%;
-    height: 45px;
+    height: 8vh;
     padding: 0;
     border: none;
     background-color: rgba(23, 64, 139);
@@ -58,7 +91,7 @@
 
 .live-table .buy-input {
     width: 95%;
-    height: 41px;
+    height: 7.4vh;
     text-align: center;
     font-family: Helvetica, sans-serif;
     border-radius: 5%;
@@ -67,4 +100,8 @@
 
 .live-table td:nth-child(1) {
     border-left: 8px rgba(23, 64, 139, 1) solid;
+}
+
+.player-name:hover {
+    cursor: pointer;
 }

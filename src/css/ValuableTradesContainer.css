@@ -1,0 +1,11 @@
+.valuable-trades-container {
+    grid-area: stats;
+    align-self: end;
+    margin-bottom: 6%;
+    width: 95%;
+}
+
+.valuable-trades-container table {
+    border-spacing: 0 3px;
+    border-collapse: separate;
+}

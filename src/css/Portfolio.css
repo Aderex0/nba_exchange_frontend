@@ -1,7 +1,12 @@
 .portfolio-container {
     margin-left: 5%;
     grid-area: standings;
+    width: 150vh;
+}
+
+.portfolio-box {
     height: 90vh;
+    overflow-y: scroll;
 }
 
 .portfolio-table {
@@ -9,6 +14,8 @@
     border-spacing: 0 5px;
     border-collapse: separate;
     width: 100%;
+    overflow: scroll;
+    height: 90vh;
 }
 
 .portfolio-table th {

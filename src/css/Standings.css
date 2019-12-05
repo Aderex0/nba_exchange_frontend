@@ -1,0 +1,37 @@
+.standings-container {
+    width: 95%;
+    grid-area: standings;
+    height: 80vh;
+    margin-left: 10px;
+}
+
+.standings-container td {
+    font-family: Helvetica, sans-serif;
+    background-color: rgba(23, 64, 139, 0.1);
+}
+
+.standings-container th {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.standings-container table {
+    background-color: white;
+    width: 100%;
+    border-bottom: 2px solid rgba(23, 64, 139, 1);
+    border-spacing: 0 3px;
+    border-collapse: separate;
+}
+
+.standings-container td:nth-child(5) {
+    background-color: rgba(23, 64, 139, 0.4);
+}
+.standings-container td:nth-child(6) {
+    background-color: rgba(201, 8, 42, 0.4);
+}
+
+.standings-logo {
+    width: 2.2vh;
+    margin: 0;
+    padding: 0;
+}

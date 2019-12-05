@@ -7,20 +7,29 @@ import Header from './containers/Header'
 import MainLiveContainer from './containers/MainLiveContainer'
 import Portfolio from './containers/Portfolio'
 import SignUp from './containers/SignUp'
+import ValuableTradesContainer from './containers/ValuableTradesContainer'
+import StandingsContainer from './containers/StandingsContainer'
 
 import LogIn from './components/LogIn'
+import HistoricalPriceChart from './components/HistoricalPriceChart'
 
 import useToggle from './hooks/useToggle'
 import useUserDetails from './hooks/useUserDetails'
 import useOwnedPlayers from './hooks/useOwnedPlayers'
+import useGetHistoricalPrice from './hooks/useGetHistoricalPrice'
+import useMousePosition from './hooks/useMousePosition'
 
 const App = props => {
-  const { toggle, handleToggle } = useToggle()
+  const { toggle, handleToggle, handleGraphToggle, graphToggle } = useToggle()
+
+  const { x, y } = useMousePosition()
+
   const {
     ownedPlayers,
     getUserId,
     updateOwnedPlayersFromAPI
   } = useOwnedPlayers()
+
   const {
     userId,
     setUserId,
@@ -29,6 +38,8 @@ const App = props => {
     accountBalance,
     setAccountBalance
   } = useUserDetails()
+
+  const { historicalData, setPlayerId } = useGetHistoricalPrice()
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -39,11 +50,25 @@ const App = props => {
         validateData(userData)
       })
     }
-  })
+  }, [])
+
+  const signUpLogin = userData => {
+    setUserId(userData.id)
+    setUsername(
+      userData.username.charAt(0).toUpperCase() + userData.username.slice(1)
+    )
+    setAccountBalance(userData.account_balance)
+    getUserId(userData.id)
+
+    localStorage.setItem('token', userData.token)
+    props.history.push('/')
+  }
 
   const validateData = userData => {
     setUserId(userData.id)
-    setUsername(userData.username)
+    setUsername(
+      userData.username.charAt(0).toUpperCase() + userData.username.slice(1)
+    )
     setAccountBalance(userData.account_balance)
     getUserId(userData.id)
   }
@@ -56,8 +81,20 @@ const App = props => {
     localStorage.removeItem('token')
   }
 
+  let position = {
+    left: x,
+    top: y,
+    position: 'absolute',
+    zIndex: 999
+  }
+
   return (
-    <div className='grid-box'>
+    <div
+      onClick={e => {
+        handleGraphToggle(e)
+      }}
+      className='grid-box'
+    >
       <Header
         logInToggle={handleToggle}
         userId={userId}
@@ -78,9 +115,42 @@ const App = props => {
         exact
         path='/'
         render={routerProps => (
-          <MainLiveContainer {...routerProps} userId={userId} />
+          <MainLiveContainer
+            {...routerProps}
+            userId={userId}
+            setAccountBalance={setAccountBalance}
+            updateOwnedPlayers={updateOwnedPlayersFromAPI}
+            setPlayerId={setPlayerId}
+          />
         )}
       />
+
+      <Route
+        exact
+        path='/'
+        render={routerProps => <StandingsContainer {...routerProps} />}
+      />
+
+      <Route
+        exact
+        path='/'
+        render={routerProps => <ValuableTradesContainer {...routerProps} />}
+      />
+
+      {graphToggle && (
+        <Route
+          exact
+          path='/'
+          render={routerProps => (
+            <div style={position}>
+              <HistoricalPriceChart
+                {...routerProps}
+                historicalData={historicalData}
+              />
+            </div>
+          )}
+        />
+      )}
 
       <Route
         exact
@@ -93,6 +163,10 @@ const App = props => {
             updateOwnedPlayersFromAPI={updateOwnedPlayersFromAPI}
             setAccountBalance={setAccountBalance}
             history={props.history}
+            positionStyle={position}
+            historicalData={historicalData}
+            setPlayerId={setPlayerId}
+            graphToggle={graphToggle}
           />
         )}
       />
@@ -100,7 +174,9 @@ const App = props => {
       <Route
         exact
         path='/signup'
-        render={routerProps => <SignUp {...routerProps} />}
+        render={routerProps => (
+          <SignUp {...routerProps} signUpLogin={signUpLogin} userId={userId} />
+        )}
       />
     </div>
   )

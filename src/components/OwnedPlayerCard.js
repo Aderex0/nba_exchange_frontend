@@ -11,7 +11,7 @@ const OwnedPlayerCard = props => {
   const handleSale = e => {
     e.preventDefault()
 
-    if (qty <= qtyOwned && qty != 0) {
+    if (qty <= qtyOwned && qty > 0) {
       const saleDetails = {
         user_id: props.userId,
         playerId: playerId,
@@ -19,14 +19,13 @@ const OwnedPlayerCard = props => {
         qty: qty,
         transaction_id: id
       }
-      API.sellPlayer(saleDetails).then(userDetails =>
-        setBalanceAndQty(userDetails)
-      )
+
+      API.sellPlayer(saleDetails).then(userData => setBalanceAndQty(userData))
     }
   }
 
-  const setBalanceAndQty = userDetails => {
-    props.setAccountBalance(userDetails.account_balance)
+  const setBalanceAndQty = userData => {
+    props.setAccountBalance(userData.account_balance)
     props.updateOwnedPlayers()
   }
 
@@ -48,7 +47,12 @@ const OwnedPlayerCard = props => {
 
   return (
     <tr>
-      <td className='player-name'>
+      <td
+        className='player-name'
+        onClick={() => {
+          props.setPlayerId(playerId)
+        }}
+      >
         {player.firstName} {player.lastName}
       </td>
       <td align='center'>
@@ -64,6 +68,7 @@ const OwnedPlayerCard = props => {
       <td align='center'>
         <input
           onChange={e => trackQty(e.target.value)}
+          max='100'
           type='number'
           form='sell_form'
           name='selling'
