@@ -13,16 +13,34 @@
 
 .username {
     float: right;
+    width: 95%
 }
 
 .password {
     float: right;
+    width: 95%;
 }
 
 .login-btn {
     float: right;
+    width: 50%;
+    background-color: white;
+    border: none;
+    height: 3.6vh;
 }
 
 .cancel-btn {
     float: right;
+    width: 50%;
+    background-color: rgb(201, 8, 42);
+    border: none;
+    height: 3.6vh;
+}
+
+.cancel-btn:hover {
+    background-color: rgba(201, 8, 42, 0.6);
+}
+
+.login-btn:hover {
+    background-color: rgba(23, 64, 139, 0.5);
 }

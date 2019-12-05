@@ -68,7 +68,6 @@ const OwnedPlayerCard = props => {
       <td align='center'>
         <input
           onChange={e => trackQty(e.target.value)}
-          max='100'
           type='number'
           form='sell_form'
           name='selling'

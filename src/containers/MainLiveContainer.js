@@ -6,7 +6,7 @@ import Tab from '../components/Tab'
 import ScoreIndex from './ScoreIndex'
 
 const MainLiveContainer = props => {
-  const [activeTab, setActiveTab] = useState(1)
+  const [activeTab, setActiveTab] = useState(2)
 
   const tabColor = { color: 'rgb(23, 64, 139)', backgroundColor: 'white' }
 

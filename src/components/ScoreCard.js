@@ -32,6 +32,10 @@ const ScoreCard = props => {
       <div className='line-score-container'>
         <div className='live'>
           <p>{statusGame}</p>
+          <p style={{ margin: '0', fontWeight: '400' }}>
+            {props.game.game.startTime.substring(0, 10)}
+          </p>
+          {props.game.game.startTime.substring(11, 16)} BST
         </div>
         <div className='vQ1'>{vQ1Score}</div>
         <div className='vQ2'>{vQ2Score}</div>

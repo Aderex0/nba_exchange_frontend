@@ -51,6 +51,7 @@ const LogIn = ({
           name='username'
           type='text'
           value={username}
+          placeholder='username'
         />
         <input
           onChange={e => trackPassword(e.target.value)}
@@ -58,6 +59,7 @@ const LogIn = ({
           name='password'
           type='password'
           value={password}
+          placeholder='password'
         />
         <input className='login-btn' type='submit' value='Log In' />
         <button onClick={logInToggle} className='cancel-btn'>

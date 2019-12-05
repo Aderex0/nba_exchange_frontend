@@ -15,7 +15,7 @@
     border-collapse: separate;
     width: 100%;
     overflow: scroll;
-    height: 90vh;
+    max-height: 90vh;
 }
 
 .portfolio-table th {

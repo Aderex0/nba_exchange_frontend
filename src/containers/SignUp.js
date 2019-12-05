@@ -103,9 +103,9 @@ const SignUp = ({ signUpLogin, userId, history }) => {
         <label>
           <input name='signup' type='submit' value='Register' />
         </label>
-        {/* <Link to='/'>
+        <Link to='/'>
           <button>Cancel</button>
-        </Link> */}
+        </Link>
       </form>
     </div>
   )
