@@ -24,4 +24,8 @@ The idea behind is to give users a different, fun way to use NBA knowledge to ga
 
 ## NBA Exchange backend
 
-https://github.com/Aderex0/nba_exchange_backend
+For more information about how it works: https://github.com/Aderex0/nba_exchange_backend
+
+## Wireframes
+
+https://docdro.id/KaTGMno
