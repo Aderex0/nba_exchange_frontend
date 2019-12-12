@@ -7,8 +7,8 @@ The idea behind is to give users a different, fun way to use NBA knowledge to ga
 ## Build with
 
 - React.js
- - Hooks
- - Router
+  - Hooks
+  - Router
 - Styled Components
 - CSS
 - JavaScript
