@@ -23,7 +23,7 @@ const LogIn = ({
     }
 
     API.loginUser(loginDetails).then(userData => {
-      if (userData.error) throw Error(userData.error)
+      if (userData.error) throw alert('Invalid Login Details')
 
       login(userData)
       history.push('/')

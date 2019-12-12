@@ -8,6 +8,7 @@
 .standings-container td {
     font-family: Helvetica, sans-serif;
     background-color: rgba(23, 64, 139, 0.1);
+    height: 4vh;
 }
 
 .standings-container th {
