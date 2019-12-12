@@ -1,4 +1,4 @@
-# NBA exchange front end.
+# NBA exchange frontend
 
 NBA Exchange is an an app where a user is able to capitalize on their knowledge of the NBA buy trading NBA players. A user is able to buy an X amount of players into a portfolio. The players can either be either kept for dividends or sold for profit/loss. The app also has functionality of seeing NBA scores.
 
@@ -20,8 +20,6 @@ The idea behind is to give users a different, fun way to use NBA knowledge to ga
 - Registering new users
 - LogIn, Authentication and Authorization
 
+## NBA Exchange backend
 
-## API
-
-Uses API-NBA, a free API for everything NBA related.
-https://rapidapi.com/api-sports/api/api-nba
+https://github.com/Aderex0/nba_exchange_backend
