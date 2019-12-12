@@ -7,10 +7,12 @@ The idea behind is to give users a different, fun way to use NBA knowledge to ga
 ## Build with
 
 - React.js
+ - Hooks
+ - Router
 - Styled Components
 - CSS
 - JavaScript
-- React Hooks
+- React google charts
   
 ## Features
 
